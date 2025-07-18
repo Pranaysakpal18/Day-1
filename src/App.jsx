@@ -1,18 +1,26 @@
 import React from 'react'
 import SideBar from './components/SideBar'
-import Header from './components/Header'
+
+import Navbar from './components/Navbar'
+import DashBoard from './Pages/DashBoard'
 
 const App = () => {
   return (
     <div>
-      <Header/>
 
-      <div>
-      <SideBar/>
+      <Navbar/>
 
-      </div>
+
+
+    <div className='flex'>
 
       
+      <SideBar/>
+      <DashBoard/>
+
+      
+
+      </div>
     </div>
   )
 }
