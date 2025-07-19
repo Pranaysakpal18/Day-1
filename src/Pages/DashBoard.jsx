@@ -5,6 +5,10 @@ import data from '../Data/DashboardData'
 import BarChart from '../charts/BarChat'
 import LineChart from '../charts/LineChart'
 import PieChart from '../charts/PieChart'
+import { FaUsers } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
+import { FaClock } from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa";
 
 const DashBoard = () => {
   const [cart,setCart]=useState([])
@@ -15,10 +19,10 @@ const DashBoard = () => {
     setTimeout(()=>{
       const apiData=[
       
-    {title:"Total Users" , value:"1,451" , icon :"👥"},
-    {title:"Total Views" , value:"1,45,687", icon:"👁️"},
-    {title:"Session" , value:"456", icon:"🕒"},
-    {title:"Bounce Rate" , value:"41%", icon:"📉"}
+    {title:"Total Users" , value:"1,451" , icon :<FaUsers/>,color:'text-blue-400'},
+    {title:"Total Views" , value:"1,45,687", icon:<FaEye/>,color:'text-black-400'},
+    {title:"Session" , value:"456", icon:<FaClock/>,color:'text-red-400'},
+    {title:"Bounce Rate" , value:"41%", icon:<FaChartLine/>,color:'text-green-400'}
 
 ]
 
@@ -30,7 +34,8 @@ setLoading(false)
 
 
   if(loading){
-    return <div className='text-2xl flex items-center mx-120'>Something Loading...</div>
+    return <div className='flex justify-center items-center h-screen text-2xl font-semibold text-gray-500 w-screen'>Something Loading...</div>
+    // "flex justify-center items-center h-screen text-2xl font-semibold text-gray-700">
   }
 
 
