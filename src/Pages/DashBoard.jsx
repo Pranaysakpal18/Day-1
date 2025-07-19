@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import DashBoardCart from '../components/DashBoardCart'
 import data from '../Data/DashboardData'
+import BarChart from '../charts/BarChat'
+import LineChart from '../charts/LineChart'
+import PieChart from '../charts/PieChart'
 
 const DashBoard = () => {
   const [cart,setCart]=useState([])
@@ -32,15 +35,6 @@ setLoading(false)
 
 
 
-
-
-
-
-
-
-
-
-
   return (
     <div className='w-full bg-gray-300'>
         <Header/>
@@ -57,25 +51,17 @@ setLoading(false)
         ))}
       </div>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+  <div className="bg-white p-4 rounded-xl shadow"><BarChart /></div>
+  <div className="bg-white p-4 rounded-xl shadow"><LineChart /></div>
+  <div className="bg-white p-4 rounded-xl shadow"><PieChart /></div>
+</div>
 
 
 
 
-
-      
     </div>
   )
 }
 
 export default DashBoard
-
-// return (
-//     <div className="flex flex-col gap-6 p-6 flex-1">
-//       <Header />
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//         <DashboardCard title="Total Users" value="1,200" />
-//         <DashboardCard title="Sales" value="₹25,000" />
-//         <DashboardCard title="Orders" value="320" />
-//       </div>
-//     </div>
-//   );
