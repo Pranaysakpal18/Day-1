@@ -21,8 +21,9 @@ const Users = () => {
     },[])
 
     const filterdUser=users.filter((user)=>
-        user.name.toLowerCase().includes(search.toLowerCase())
-    )
+        user.name.toLowerCase().includes(search.toLowerCase()) ||
+    user.email.toLowerCase().includes(search.toLowerCase())
+    );
 
     
 
@@ -46,11 +47,13 @@ const Users = () => {
                 {filterdUser.map((user)=>{
                     return(
                         <div className='bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300' key={user.id}>
-                            <h3>{user.name}</h3>
-                            <p>{user.username}</p>
-                            <p>{user.email}</p>
-                            <p>{user.phone}</p>
-                            <a href={`http :${user.website}`}>{user.website}</a>
+                            <h3 className='font-bold text-lg'>{user.name}</h3>
+                            <p className='text-sm text-gray-700'>{user.username}</p>
+                            <p className='text-sm text-gray-700'>{user.email}</p>
+                            <p className='text-sm text-gray-700'>{user.phone}</p>
+                            <p className='text-sm text-blue-600'>
+                            <a href={`https://${user.website}`} target='_blank' rel="noopener noreferrer" className="text-blue-500 underline">{user.website}</a>
+                            </p>
                             
 
                     </div>
